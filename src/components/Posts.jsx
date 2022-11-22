@@ -32,11 +32,11 @@ const Posts = () => {
 
               <div className="mx-2 flex flex-row justify-between mt-2">
                 <div className="flex gap-3">
-                  <HeartIcon className="h-6 w-6 hover:text-gray-400 cursor-pointer" />
-                  <ChatBubbleOvalLeftIcon className="h-6 w-6 hover:text-gray-400 cursor-pointer" />
-                  <PaperAirplaneIcon className="h-6 w-6 hover:text-gray-400 cursor-pointer -rotate-45" />
+                  <HeartIcon className="h-5 w-5 hover:text-gray-400 cursor-pointer" />
+                  <ChatBubbleOvalLeftIcon className="h-5 w-5 hover:text-gray-400 cursor-pointer" />
+                  <PaperAirplaneIcon className="h-5 w-5 hover:text-gray-400 cursor-pointer -rotate-45" />
                 </div>
-                <BookmarkIcon className="h-6 w-6 hover:text-gray-400 cursor-pointer " />
+                <BookmarkIcon className="h-5 w-5 hover:text-gray-400 cursor-pointer " />
               </div>
 
               <div className="post-description flex flex-col mt-2 mx-2">
