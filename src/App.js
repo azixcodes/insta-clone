@@ -1,7 +1,41 @@
 import React from "react";
-
+import Sidebar from "./components/Sidebar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  Home,
+  Explore,
+  Messages,
+  Notifications,
+  Profile,
+  Search,
+} from "./pages/index";
+import BottomNavigation from "./components/BottomNavigation";
+import MiniTopNavigation from "./components/MiniTopNavigation";
 const App = () => {
-  return <div className="text-red-500">App</div>;
+  return (
+    <BrowserRouter>
+      <div className="md:hidden">
+        <MiniTopNavigation />
+        <BottomNavigation />
+      </div>
+      <div className="flex flex-row  w-full min-h-screen justify-between">
+        <div className="w-56">
+          <Sidebar />
+        </div>
+        <div className="routes ">
+          <h4>helo</h4>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/explore" element={<Explore />} />
+            <Route path="/notifications" element={<Notifications />} />
+            <Route path="/messages" element={<Messages />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
+  );
 };
 
 export default App;
