@@ -11,6 +11,7 @@ import {
 } from "./pages/index";
 import BottomNavigation from "./components/BottomNavigation";
 import MiniTopNavigation from "./components/MiniTopNavigation";
+import Stories from "./components/Stories";
 const App = () => {
   return (
     <BrowserRouter>
@@ -18,12 +19,14 @@ const App = () => {
         <MiniTopNavigation />
         <BottomNavigation />
       </div>
-      <div className="flex flex-row  w-full min-h-screen justify-between">
+      <div className="flex flex-row  w-full min-h-screen gap-32">
         <div className="w-56">
           <Sidebar />
         </div>
+        <div>
+          <Stories />
+        </div>
         <div className="routes ">
-          <h4>helo</h4>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/explore" element={<Explore />} />
