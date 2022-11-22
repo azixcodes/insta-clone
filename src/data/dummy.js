@@ -10,6 +10,10 @@ import User2 from "./user2.jpg";
 import User3 from "./user3.jpg";
 import User4 from "./user4.jpg";
 import User5 from "./user5.jpg";
+import User from "./user.jpeg";
+import php1 from "./php.jpg";
+import Tailwind from "./tail.png";
+import NextJs from "./nextjs1.jpg";
 
 export const links = [
   {
@@ -59,5 +63,94 @@ export const stories = [
   {
     username: "justin",
     image: User5,
+  },
+];
+
+export const posts = [
+  {
+    post: [
+      {
+        username: "goswami rashoneie",
+        profile: User,
+        userPost: php1,
+        caption: "Get started with PHP ): ",
+        likes: 234,
+        time: "8 hours ago",
+        comments: [
+          {
+            user: "smith",
+            image: User4,
+            comment: "already on it...",
+            timeStamp: "04 houres ago",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    post: [
+      {
+        username: "binnu",
+        profile: User,
+        userPost: NextJs,
+        caption: "Next JS 13 is awesome for server side rendering ",
+        likes: 928,
+        time: "2 days ago",
+        comments: [
+          {
+            user: "alexa",
+            image: User3,
+            comment: "yeah it's amazing..",
+            timeStamp: "just now",
+          },
+          {
+            user: "smith",
+            image: User4,
+            comment: "already on it...",
+            timeStamp: "04 houres ago",
+          },
+          {
+            user: "binnu",
+            image: User5,
+            comment: "get some help",
+            timeStamp: "5 hours ago",
+          },
+        ],
+      },
+    ],
+  },
+  //post 3
+  {
+    post: [
+      {
+        username: "aziz",
+        profile: User,
+        userPost: Tailwind,
+        caption:
+          "How to build an amazing dashboard with Tailwindcss, follow the link below ",
+        likes: 1522,
+        time: "2 hours ago",
+        comments: [
+          {
+            user: "alexa",
+            image: User3,
+            comment: "yeah it's amazing..",
+            timeStamp: "just now",
+          },
+          {
+            user: "smith",
+            image: User4,
+            comment: "already on it...",
+            timeStamp: "04 houres ago",
+          },
+          {
+            user: "binnu",
+            image: User5,
+            comment: "get some help",
+            timeStamp: "5 hours ago",
+          },
+        ],
+      },
+    ],
   },
 ];

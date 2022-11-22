@@ -5,14 +5,13 @@ const Stories = () => {
   return (
     <div
       className="border max-w-3xl w-96 h-32 scrollbar-track-slate-100 scrollbar-thin 
-     overflow-x-auto flex flex-row gap-5  items-center mt-3 shadow-sm rounded-lg bg-white"
+     overflow-x-auto flex flex-row gap-5  items-center mt-3 shadow-sm  bg-white"
     >
       <div className="flex mx-3 gap-3">
         {stories.map((item, index) => (
-          <div className="flex flex-col text-center items-center">
+          <div className="flex flex-col text-center items-center" key={index}>
             <img
               src={item.image}
-              key={index}
               className="h-16 w-16 rounded-full border-2 border-yellow-400"
               alt="avatar"
             />

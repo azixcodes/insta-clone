@@ -12,6 +12,7 @@ import {
 import BottomNavigation from "./components/BottomNavigation";
 import MiniTopNavigation from "./components/MiniTopNavigation";
 import Stories from "./components/Stories";
+import Posts from "./components/Posts";
 const App = () => {
   return (
     <BrowserRouter>
@@ -23,8 +24,9 @@ const App = () => {
         <div className="w-56">
           <Sidebar />
         </div>
-        <div>
+        <div className="flex flex-col gap-2">
           <Stories />
+          <Posts />
         </div>
         <div className="routes ">
           <Routes>
