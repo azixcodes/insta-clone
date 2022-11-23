@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import InstaSmall from "../data/insta-text.png";
 import InstamLarge from "../data/insta.png";
 import { links } from "../data/dummy";
@@ -6,12 +6,12 @@ import { NavLink } from "react-router-dom";
 import { IoPaperPlaneOutline } from "react-icons/io5";
 import { PlusIcon, Bars3Icon } from "@heroicons/react/24/outline";
 import User from "../data/user.jpeg";
-import UploadFile from "./UploadFile";
+// import UploadFile from "./UploadFile";
 const Sidebar = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-  const handleUploadFileClick = () => {
-    setModalOpen(false);
-  };
+  // const [modalOpen, setModalOpen] = useState(false);
+  // const handleUploadFileClick = () => {
+  //   setModalOpen(false);
+  // };
   return (
     <div className="fixed top-0 w-56 flex flex-col border h-screen pt-6 pb-6">
       <div className="mx-2 flex">
@@ -53,9 +53,9 @@ const Sidebar = () => {
         <div className="flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg p-3 gap-3 group">
           <PlusIcon className="h-5 w-5 border-2 border-slate-600 rounded-md group-hover:scale-105 ease-in-out" />
           <span
-            onClick={() => {
-              setModalOpen(true);
-            }}
+          // onClick={() => {
+          //   setModalOpen(true);
+          // }}
           >
             Create
           </span>
@@ -74,12 +74,12 @@ const Sidebar = () => {
         <span>Create</span>
       </div>
 
-      {modalOpen && (
+      {/* {modalOpen && (
         <UploadFile
           handleUploadFileClick={handleUploadFileClick}
           modalOpen={modalOpen}
         />
-      )}
+      )} */}
     </div>
   );
 };

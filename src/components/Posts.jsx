@@ -7,14 +7,14 @@ import {
   BookmarkIcon,
   FaceSmileIcon,
 } from "@heroicons/react/24/outline";
-import Modal from "./DotMenus";
+// import Modal from "./DotMenus";
 
 const Posts = () => {
-  const [modalOpen, setmodalOpen] = useState(false);
+  // const [modalOpen, setmodalOpen] = useState(false);
   const [hasText, sethasText] = useState(true);
-  const handleClose = () => {
-    setmodalOpen(false);
-  };
+  // const handleClose = () => {
+  //   setmodalOpen(false);
+  // };
   const handleTextChange = (e) => {
     if (e.length <= 0) {
       sethasText(true);
@@ -42,9 +42,9 @@ const Posts = () => {
                 </div>
                 <p
                   className="font-bold cursor-pointer"
-                  onClick={() => {
-                    setmodalOpen(true);
-                  }}
+                  // onClick={() => {
+                  //   setmodalOpen(true);
+                  // }}
                 >
                   ...
                 </p>
@@ -124,7 +124,7 @@ const Posts = () => {
           ))}
         </div>
       ))}
-      {modalOpen && <Modal modalOpen={modalOpen} handleClose={handleClose} />}
+      {/* {modalOpen && <Modal modalOpen={modalOpen} handleClose={handleClose} />} */}
     </div>
   );
 };
