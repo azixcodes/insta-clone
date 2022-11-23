@@ -5,12 +5,20 @@ import {
   ChatBubbleOvalLeftIcon,
   HeartIcon,
   BookmarkIcon,
+  FaceSmileIcon,
 } from "@heroicons/react/24/outline";
 import Modal from "./DotMenus";
+
 const Posts = () => {
   const [modalOpen, setmodalOpen] = useState(false);
+  const [hasText, sethasText] = useState(true);
   const handleClose = () => {
     setmodalOpen(false);
+  };
+  const handleTextChange = (e) => {
+    if (e.length <= 0) {
+      sethasText(true);
+    } else sethasText(false);
   };
   return (
     <div className="max-w-3xl w-96">
@@ -65,13 +73,33 @@ const Posts = () => {
                 </p>
               </div>
 
-              <div className="comments max-h-16 overflow-y-auto h-16 mt-2 mx-2">
-                <label className="text-xs text-gray-400 font-thin cursor-pointer">
+              <div className="comments  mt-2 ">
+                <label className="text-xs text-gray-400 font-thin cursor-pointer ml-2">
                   view all {singlePost.comments.length} comments
                 </label>
-                <p className="text-xs font-thin text-gray-400">
+                <p className="text-xs font-thin text-gray-400 ml-2">
                   {singlePost.time}{" "}
                 </p>
+                <div className="bg-white w-full flex flex-row justify-between border-t items-center p-2">
+                  <div className="flex flex-row items-center gap-2 flex-1 mx-2">
+                    <FaceSmileIcon className="h-5 w-5" />
+                    <textarea
+                      placeholder="Add a comment"
+                      className="w-full overflow-y-auto outline-none bg-transparent h-6 text-sm scrollbar-none"
+                      onChange={(e) => {
+                        handleTextChange(e.target.value);
+                      }}
+                    ></textarea>
+                  </div>
+                  <button
+                    className={`text-sky-500 text-xs font-medium ${
+                      hasText && "cursor-not-allowed"
+                    }`}
+                    disabled={hasText}
+                  >
+                    Post
+                  </button>
+                </div>
                 {/* {singlePost.comments.map((item, k) => (
                   <div className="flex flex-row items-center gap-2" key={k}>
                     <img
