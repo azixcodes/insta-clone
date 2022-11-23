@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { posts } from "../data/dummy";
 import {
   PaperAirplaneIcon,
@@ -6,7 +6,12 @@ import {
   HeartIcon,
   BookmarkIcon,
 } from "@heroicons/react/24/outline";
+import Modal from "./DotMenus";
 const Posts = () => {
+  const [modalOpen, setmodalOpen] = useState(false);
+  const handleClose = () => {
+    setmodalOpen(false);
+  };
   return (
     <div className="max-w-3xl w-96">
       {posts.map((post, index) => (
@@ -22,7 +27,14 @@ const Posts = () => {
                   className="h-7 w-7 rounded-full border"
                   alt="avatar"
                 />
-                <p className="font-bold">...</p>
+                <p
+                  className="font-bold cursor-pointer"
+                  onClick={() => {
+                    setmodalOpen(true);
+                  }}
+                >
+                  ...
+                </p>
               </div>
               <img
                 src={singlePost.userPost}
@@ -39,9 +51,9 @@ const Posts = () => {
                 <BookmarkIcon className="h-5 w-5 hover:text-gray-400 cursor-pointer " />
               </div>
 
-              <div className="post-description flex flex-col mt-2 mx-2">
-                <label className="font-semibold text-sm tracking-tight">
-                  {singlePost.likes} Likes
+              <div className="post-description flex flex-col mt-2 mx-2 ">
+                <label className="font-semibold text-sm tracking-tight pb-1">
+                  {singlePost.likes} likes
                 </label>
                 <p className="text-xs text-slate-600">
                   <span className="font-bold text-xs tracking-tighter">
@@ -79,6 +91,7 @@ const Posts = () => {
           ))}
         </div>
       ))}
+      {modalOpen && <Modal modalOpen={modalOpen} handleClose={handleClose} />}
     </div>
   );
 };

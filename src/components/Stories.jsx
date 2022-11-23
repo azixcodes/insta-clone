@@ -5,7 +5,7 @@ const Stories = () => {
   return (
     <div
       className="border max-w-3xl w-96 h-32 scrollbar-track-slate-100 scrollbar-thin 
-     overflow-x-auto flex flex-row gap-5  items-center mt-3 shadow-sm  bg-white"
+     overflow-x-auto flex flex-row gap-5  items-center mt-3 rounded-md  bg-white"
     >
       <div className="flex mx-3 gap-3">
         {stories.map((item, index) => (

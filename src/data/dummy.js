@@ -91,7 +91,7 @@ export const posts = [
     post: [
       {
         username: "binnu",
-        profile: User,
+        profile: User3,
         userPost: NextJs,
         caption: "Next JS 13 is awesome for server side rendering ",
         likes: 928,
@@ -153,4 +153,15 @@ export const posts = [
       },
     ],
   },
+];
+
+export const quicklinks = [
+  "Report",
+  "Unfollow",
+  "Add to favorites",
+  "Go to Post",
+  "Share",
+  "Copy link",
+  "Embed",
+  "Cancel",
 ];
