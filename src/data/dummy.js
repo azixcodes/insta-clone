@@ -155,17 +155,6 @@ export const posts = [
   },
 ];
 
-export const quicklinks = [
-  "Report",
-  "Unfollow",
-  "Add to favorites",
-  "Go to Post",
-  "Share",
-  "Copy link",
-  "Embed",
-  "Cancel",
-];
-
 export const suggestions = [
   {
     username: "goswami rashoneie",

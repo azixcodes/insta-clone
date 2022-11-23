@@ -7,14 +7,14 @@ import {
   BookmarkIcon,
   FaceSmileIcon,
 } from "@heroicons/react/24/outline";
-// import Modal from "./DotMenus";
+import PostOptions from "../layouts/PostOptions";
 
 const Posts = () => {
-  // const [modalOpen, setmodalOpen] = useState(false);
+  const [modalOpen, setmodalOpen] = useState(false);
   const [hasText, sethasText] = useState(true);
-  // const handleClose = () => {
-  //   setmodalOpen(false);
-  // };
+  const handleClose = () => {
+    setmodalOpen(false);
+  };
   const handleTextChange = (e) => {
     if (e.length <= 0) {
       sethasText(true);
@@ -42,9 +42,9 @@ const Posts = () => {
                 </div>
                 <p
                   className="font-bold cursor-pointer"
-                  // onClick={() => {
-                  //   setmodalOpen(true);
-                  // }}
+                  onClick={() => {
+                    setmodalOpen(true);
+                  }}
                 >
                   ...
                 </p>
@@ -90,7 +90,7 @@ const Posts = () => {
                     <FaceSmileIcon className="h-5 w-5" />
                     <textarea
                       placeholder="Add a comment"
-                      className="w-full overflow-y-auto outline-none bg-transparent h-6 text-sm scrollbar-none"
+                      className="w-full overflow-y-auto outline-none bg-transparent h-6 text-sm scrollbar-none border-none focus:outline-none focus:border-none"
                       onChange={(e) => {
                         handleTextChange(e.target.value);
                       }}
@@ -124,7 +124,9 @@ const Posts = () => {
           ))}
         </div>
       ))}
-      {/* {modalOpen && <Modal modalOpen={modalOpen} handleClose={handleClose} />} */}
+      {modalOpen && (
+        <PostOptions modalOpen={modalOpen} handleClose={handleClose} />
+      )}
     </div>
   );
 };
