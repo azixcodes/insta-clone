@@ -14,7 +14,7 @@ const Home = () => {
       </section>
 
       <section className="hidden xl:inline-grid md:col-span-1">
-        <div className="fixed top-10">
+        <div className="relative top-10 right-24 z-0">
           <MiniProfile />
         </div>
       </section>

@@ -3,10 +3,14 @@ import Backdrop from "@mui/material/Backdrop";
 import { quicklinks } from "../data/dummy";
 const DotMenus = ({ modalOpen, handleClose }) => {
   return (
-    <Backdrop open={modalOpen} onClick={() => handleClose()}>
+    <Backdrop
+      open={modalOpen}
+      onClick={() => handleClose()}
+      style={{ zIndex: "10000" }}
+    >
       <div
         className="flex flex-col items-center justify-center
-        shadow-md border w-72 gap-2 rounded-md p-1 divide-y bg-white"
+        shadow-md border w-72 gap-2 rounded-md p-1 divide-y bg-white z-50"
       >
         {quicklinks.map((link, index) => (
           <div

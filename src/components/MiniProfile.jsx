@@ -3,22 +3,24 @@ import User from "../data/user.jpeg";
 import { suggestions, tags } from "../data/dummy";
 const MiniProfile = () => {
   return (
-    <div className="flex flex-col max-w-xs w-96 ">
+    <div className="flex flex-col max-w-xs w-96 z-0">
       <div className="flex flex-row justify-between mx-2 pb-4">
         <div className="flex flex-row gap-4 items-center">
           <img src={User} className="w-14 h-14 rounded-full" alt="avatar" />
           <div className="flex flex-col">
-            <p className="text-xs font-bold">username</p>
-            <span className="text-xs text-gray-400">Name</span>
+            <p className="text-xs font-bold">aziz-codes</p>
+            <span className="text-xs text-gray-400">Aziz</span>
           </div>
         </div>
-        <button className="text-sky-500 text-xs">switch</button>
+        <button className="text-sky-500 text-xs font-semibold">switch</button>
       </div>
       <div className="flex flex-row justify-between mx-2 ">
         <h4 className="text-sm text-gray-400 font-semibold tracking-tight">
           Suggestions For You
         </h4>
-        <button className="text-black text-xs tracking-tight">See All</button>
+        <button className="text-black text-xs tracking-tight font-semibold">
+          See All
+        </button>
       </div>
       <br />
       {suggestions.map((item, index) => (
