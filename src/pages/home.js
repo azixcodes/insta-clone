@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <main
       className="grid grid-cols-1 md:grid-cols-2 md:max-w-3xl 
-    xl:grid-cols-3 xl:max-w-6xl mx-auto !max-w-3xl gap-6"
+    xl:grid-cols-3 xl:max-w-6xl mx-auto !max-w-3xl gap-6 z-0"
     >
       <section className="col-span-2 space-y-2">
         <Stories />

@@ -43,7 +43,7 @@ const MiniProfile = () => {
       ))}
       <div className="flex flex-row gap-2 mx-4 mt-3 max-w-xs w-96 flex-wrap">
         {tags.map((tag, i) => (
-          <p className="text-xs text-gray-300 " key={i}>
+          <p className="text-xs text-gray-300 cursor-pointer" key={i}>
             {tag.toString().concat(".")}
           </p>
         ))}

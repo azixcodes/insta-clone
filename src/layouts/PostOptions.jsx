@@ -6,12 +6,13 @@ const PostOptions = ({ modalOpen, handleClose }) => {
         modalOpen ? "flex" : "hidden"
       } flex-row 
   justify-center items-center`}
+      onClick={handleClose}
     >
       <div
         className="flex flex-col text-center
-        shadow-md border w-72 gap-3 rounded-md p-2 divide-y bg-white"
+        shadow-md border w-80 gap-4 rounded-md divide-y bg-white pb-3"
       >
-        <div className="text-red-500 cursor-pointer text-sm">Report</div>
+        <div className="text-red-500 cursor-pointer text-sm ">Report</div>
         <div className="text-red-500 cursor-pointer text-sm">Unfollow</div>
         <div className="text-black cursor-pointer text-sm">
           Add to favorites
