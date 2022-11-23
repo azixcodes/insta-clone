@@ -4,12 +4,12 @@ module.exports = {
     "./src/components/**/*.{js,jsx}",
     "./src/pages/**/*.{js,jsx}",
     "./src/**/*.{js,jsx}",
-    "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
+    "./src/layouts/**/*/.{js,jsx}",
   ],
   theme: {
     extend: {
       visibility: ["group-hover"],
     },
   },
-  plugins: [require("tailwind-scrollbar"), require("flowbite/plugin")],
+  plugins: [require("tailwind-scrollbar")],
 };
