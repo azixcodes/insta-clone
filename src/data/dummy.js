@@ -165,3 +165,42 @@ export const quicklinks = [
   "Embed",
   "Cancel",
 ];
+
+export const suggestions = [
+  {
+    username: "goswami rashoneie",
+    image: User2,
+    text: "new to instagram",
+  },
+  {
+    username: "binnu",
+    image: User1,
+    text: "followed by binnu",
+  },
+  {
+    username: "alexa",
+    image: User3,
+    text: "suggested for you",
+  },
+  {
+    username: "smith",
+    image: User4,
+    text: "suggested for you",
+  },
+  {
+    username: "justin",
+    image: User5,
+    text: "new to instagram",
+  },
+];
+
+export const tags = [
+  "About",
+  "Help",
+  "Press",
+  "Jobs",
+  "Privacy",
+  "Terms",
+  "Locations",
+  "Language",
+];

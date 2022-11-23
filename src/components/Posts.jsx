@@ -30,11 +30,16 @@ const Posts = () => {
           {post.post.map((singlePost, i) => (
             <div className="flex flex-col " key={i}>
               <div className="flex justify-between mx-2 mt-2 pb-2">
-                <img
-                  src={singlePost.profile}
-                  className="h-7 w-7 rounded-full border"
-                  alt="avatar"
-                />
+                <div className="flex flex-row gap-1 items-center">
+                  <img
+                    src={singlePost.profile}
+                    className="h-7 w-7 rounded-full border"
+                    alt="avatar"
+                  />
+                  <p className="text-xs font-semibold">
+                    {singlePost.username.toString().replace(" ", "")}
+                  </p>
+                </div>
                 <p
                   className="font-bold cursor-pointer"
                   onClick={() => {
@@ -66,7 +71,7 @@ const Posts = () => {
                 <p className="text-xs text-slate-600">
                   <span className="font-bold text-xs tracking-tighter">
                     {" "}
-                    {singlePost.username}
+                    {singlePost.username.toString().replace(" ", "")}
                   </span>
                   &nbsp;
                   {singlePost.caption}
