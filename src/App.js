@@ -29,12 +29,12 @@ const App = () => {
   });
   return (
     <BrowserRouter>
-      <div className="md:hidden">
+      <div className="sm:hidden ">
         {/* <MiniTopNavigation /> */}
         <BottomNavigation />
       </div>
       <div className="flex flex-row  w-full min-h-screen gap-4 md:gap-32">
-        <div className="w-56 hidden md:block">
+        <div className="w-0 sm:w-20 md:w-56 hidden sm:block">
           <Sidebar />
         </div>
         <div className="routes ">

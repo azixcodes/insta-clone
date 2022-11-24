@@ -21,7 +21,7 @@ const Sidebar = () => {
   const NormalLink =
     "flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg p-3 gap-3 group";
   return (
-    <div className="fixed top-0 w-56 flex flex-col border h-screen pt-6 pb-6">
+    <div className="fixed overflow-hidden top-0 w-0 sm:w-20 md:w-56 flex flex-col border max-h-screen h-screen pt-6 pb-6">
       <div className="mx-2 flex">
         <NavLink to="/">
           <img
@@ -54,7 +54,7 @@ const Sidebar = () => {
               </span>
             )}
 
-            <span>{link.label}</span>
+            <span className="hidden md:block">{link.label}</span>
           </NavLink>
         ))}
         <div
@@ -64,7 +64,7 @@ const Sidebar = () => {
           }}
         >
           <PlusIcon className="h-5 w-5 border-2 border-slate-600 rounded-md group-hover:scale-105 ease-in-out" />
-          <span>Create</span>
+          <span className="sm:hidden md:block">Create</span>
         </div>
         <NavLink className="flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg p-3 gap-3 group">
           <img
@@ -72,7 +72,7 @@ const Sidebar = () => {
             className="h-5 w-5 rounded-full group-hover:scale-105 ease-in-out"
             alt="user"
           />
-          <span>Profile</span>
+          <span className="sm:hidden md:block">Profile</span>
         </NavLink>
       </div>
       <div
@@ -83,7 +83,13 @@ const Sidebar = () => {
         }}
       >
         <Bars3Icon className="h-9 w-6 group-hover:scale-105 ease-in-out" />
-        <span className={`${moreOptionsModal && "font-semibold"}`}>Create</span>
+        <span
+          className={`${
+            moreOptionsModal && "font-semibold"
+          } sm:hidden md:block`}
+        >
+          Create
+        </span>
       </div>
     </div>
   );
