@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import InstaSmall from "../data/insta-text.png";
 import InstamLarge from "../data/insta.png";
 import { links } from "../data/dummy";
@@ -6,32 +6,22 @@ import { NavLink } from "react-router-dom";
 import { IoPaperPlaneOutline } from "react-icons/io5";
 import { PlusIcon, Bars3Icon } from "@heroicons/react/24/outline";
 import User from "../data/user.jpeg";
-import UploadFile from "./UploadFile";
-const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const handleClickOutSide = () => {
-    setIsOpen(false);
-  };
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    console.log(isOpen);
-  });
+import { useStateContext } from "../contexts/ContextApi";
+const Sidebar = () => {
+  const {
+    addPostModal,
+    setaddPostModal,
+    moreOptionsModal,
+    setmoreOptionsModal,
+  } = useStateContext();
+
   const activeLink =
     "flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg p-3 gap-3 group font-semibold";
   const NormalLink =
     "flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg p-3 gap-3 group";
   return (
     <div className="fixed top-0 w-56 flex flex-col border h-screen pt-6 pb-6">
-      <div className="absolute top-0 left-0" style={{ zIndex: "20000" }}>
-        {isOpen && (
-          <UploadFile handleClickOutSide={handleClickOutSide} isOpen={isOpen} />
-        )}
-      </div>
       <div className="mx-2 flex">
         <NavLink to="/">
           <img
@@ -70,7 +60,7 @@ const Sidebar = () => {
         <div
           className="flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg p-3 gap-3 group"
           onClick={() => {
-            setIsOpen(!isOpen);
+            setaddPostModal(!addPostModal);
           }}
         >
           <PlusIcon className="h-5 w-5 border-2 border-slate-600 rounded-md group-hover:scale-105 ease-in-out" />
@@ -85,9 +75,15 @@ const Sidebar = () => {
           <span>Profile</span>
         </NavLink>
       </div>
-      <div className="flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg p-3 gap-3 group">
+      <div
+        className=" flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer
+       items-center rounded-lg p-3 gap-3 group"
+        onClick={() => {
+          setmoreOptionsModal(!moreOptionsModal);
+        }}
+      >
         <Bars3Icon className="h-9 w-6 group-hover:scale-105 ease-in-out" />
-        <span>Create</span>
+        <span className={`${moreOptionsModal && "font-semibold"}`}>Create</span>
       </div>
     </div>
   );

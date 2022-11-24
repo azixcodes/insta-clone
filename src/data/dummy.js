@@ -3,7 +3,11 @@ import {
   MagnifyingGlassIcon,
   PaperAirplaneIcon,
   HeartIcon,
+  BookmarkIcon,
+  Cog6ToothIcon,
+  ShieldExclamationIcon,
 } from "@heroicons/react/24/outline";
+
 import { AiOutlineCompass } from "react-icons/ai";
 import User1 from "./user1.jpg";
 import User2 from "./user2.jpg";
@@ -18,7 +22,7 @@ import NextJs from "./nextjs1.jpg";
 export const links = [
   {
     label: "Home",
-    path: "/home",
+    path: "/",
     icon: <HomeIcon />,
   },
   {
@@ -100,7 +104,8 @@ export const posts = [
           {
             user: "alexa",
             image: User3,
-            comment: "yeah it's amazing..",
+            comment:
+              "yeah it's amazing.. I want to get the full link from youtube and this si the ebst I want to get the full link from youtube and this si the ebst",
             timeStamp: "just now",
           },
           {
@@ -192,4 +197,19 @@ export const tags = [
   "Terms",
   "Locations",
   "Language",
+];
+
+export const minibar = [
+  {
+    label: "Saved",
+    icon: <BookmarkIcon />,
+  },
+  {
+    label: "Report a Problem",
+    icon: <ShieldExclamationIcon />,
+  },
+  {
+    label: "Settings",
+    icon: <Cog6ToothIcon />,
+  },
 ];

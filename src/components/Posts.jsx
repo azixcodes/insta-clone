@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { posts } from "../data/dummy";
+import { useStateContext } from "../contexts/ContextApi";
 import {
   PaperAirplaneIcon,
   ChatBubbleOvalLeftIcon,
@@ -8,9 +9,10 @@ import {
   FaceSmileIcon,
 } from "@heroicons/react/24/outline";
 import PostOptions from "../layouts/PostOptions";
-
+import PostModal from "../layouts/PostModal";
 const Posts = () => {
   const [modalOpen, setmodalOpen] = useState(false);
+  const [post, setpost] = useState([]);
   const [hasText, sethasText] = useState(true);
   const handleClose = () => {
     setmodalOpen(false);
@@ -20,8 +22,14 @@ const Posts = () => {
       sethasText(true);
     } else sethasText(false);
   };
+  const { postModalOpen, setpostModalOpen } = useStateContext();
+  const handleClickComments = (post) => {
+    setpost(post);
+    setpostModalOpen(true);
+  };
+
   return (
-    <div className="max-w-3xl w-96">
+    <div className="max-w-screen lg:max-w-6xl w-96 overflow-hidden">
       {posts.map((post, index) => (
         <div
           className="relative w-full rounded-md border-2  flex flex-col h-auto max-h-auto mb-3"
@@ -79,7 +87,12 @@ const Posts = () => {
               </div>
 
               <div className="comments  mt-2 ">
-                <label className="text-xs text-gray-400 font-thin cursor-pointer ml-2">
+                <label
+                  className="text-xs text-gray-400 font-thin cursor-pointer ml-2"
+                  onClick={() => {
+                    handleClickComments(singlePost);
+                  }}
+                >
                   view all {singlePost.comments.length} comments
                 </label>
                 <p className="text-xs font-thin text-gray-400 ml-2">
@@ -126,6 +139,13 @@ const Posts = () => {
       ))}
       {modalOpen && (
         <PostOptions modalOpen={modalOpen} handleClose={handleClose} />
+      )}
+      {postModalOpen && (
+        <PostModal
+          postModalOpen={postModalOpen}
+          setpostModalOpen={setpostModalOpen}
+          post={post}
+        />
       )}
     </div>
   );
