@@ -1,12 +1,7 @@
 import React from "react";
-import Backdrop from "../components/Backdrop";
 
 const messages = () => {
-  return (
-    <div>
-      <Backdrop />
-    </div>
-  );
+  return <div>Messages Component goes here !</div>;
 };
 
 export default messages;

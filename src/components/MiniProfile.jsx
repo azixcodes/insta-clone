@@ -48,7 +48,7 @@ const MiniProfile = () => {
           </p>
         ))}
       </div>
-      <h4 className="text-sm text-gray-400 tracking-tight mt-4">
+      <h4 className="text-sm text-gray-400 tracking-tight mt-4 ml-4">
         &copy; 2022 Instagram 2.0 by{" "}
         <a
           href="https:www.github.com/aziz-codes"
