@@ -9,6 +9,11 @@ module.exports = {
   theme: {
     extend: {
       visibility: ["group-hover"],
+      colors: {
+        insta: "#0095f6",
+        transparent: "transparent",
+        current: "currentColor",
+      },
     },
   },
   plugins: [require("tailwind-scrollbar")],

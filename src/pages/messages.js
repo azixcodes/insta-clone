@@ -55,7 +55,7 @@ const Messages = () => {
             </button>
           </div>
           <div
-            className={`relative top-[-1.5px]  h-[2px] w-12 bg-black ${
+            className={`relative top-[-1px]  h-[0.5px] w-12 bg-black ${
               !messageSelected ? "left-[66px]" : "left-[7px]"
             }`}
           ></div>
@@ -135,12 +135,16 @@ const Messages = () => {
       ) : (
         <div className="w-full  flex flex-col justify-center items-center gap-2">
           <PaperAirplaneIcon className="h-20 w-20 border-[1.5px] rounded-full p-4 border-black -rotate-12 font-extralight" />
-          <h4 className="font-light text-lg">Your Messages</h4>
+          <h4 className="font-light text-lg">
+            {messageSelected ? "Your Messages" : "Your General Messages"}
+          </h4>
           <p className="text-gray-400 text-xs">
-            Send private photos and messages to a friend or group.
+            {messageSelected
+              ? "    Send private photos and messages to a friend or group."
+              : "Notifications are off for messages you move here, but you can turn them on anytime."}
           </p>
-          <button className="p-1 text-xs text-white rounded-sm bg-sky-500">
-            send message
+          <button className="relative p-2 text-xs text-white rounded-md bg-insta top-4">
+            {messageSelected ? "send message" : "Go to Notification Settings"}
           </button>
         </div>
       )}
