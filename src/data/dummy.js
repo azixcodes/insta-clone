@@ -213,3 +213,36 @@ export const minibar = [
     icon: <Cog6ToothIcon />,
   },
 ];
+
+export const chats = [
+  {
+    username: "goswami rashoneie",
+    image: User2,
+    lastMessage: "you get it",
+    time: "2w",
+  },
+  {
+    username: "binnu",
+    image: User1,
+    lastMessage: "I found that thing superb.",
+    time: "1w",
+  },
+  {
+    username: "alexa",
+    image: User3,
+    lastMessage: "sorry",
+    time: "3w",
+  },
+  {
+    username: "smith",
+    image: User4,
+    lastMessage: "hey there",
+    time: "2d",
+  },
+  {
+    username: "justin",
+    image: User5,
+    lastMessage: "xabardat",
+    time: "4h",
+  },
+];
