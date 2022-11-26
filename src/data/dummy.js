@@ -18,6 +18,8 @@ import User from "./user.jpeg";
 import php1 from "./php.jpg";
 import Tailwind from "./tail.png";
 import NextJs from "./nextjs1.jpg";
+import User6 from "./user6.jpg";
+import User7 from "./user7.jpg";
 
 export const links = [
   {
@@ -67,6 +69,18 @@ export const stories = [
   {
     username: "justin",
     image: User5,
+  },
+  {
+    username: "aziz",
+    image: User,
+  },
+  {
+    username: "nisha",
+    image: User6,
+  },
+  {
+    username: "krutika",
+    image: User7,
   },
 ];
 
@@ -169,7 +183,7 @@ export const suggestions = [
   {
     username: "binnu",
     image: User1,
-    text: "followed by binnu",
+    text: "followed by alexa",
   },
   {
     username: "alexa",
@@ -220,29 +234,106 @@ export const chats = [
     image: User2,
     lastMessage: "you get it",
     time: "2w",
+    messages: [
+      {
+        recieved: [
+          {
+            message: "Hey there?",
+          },
+        ],
+        sent: [
+          {
+            message: "Hello",
+          },
+        ],
+      },
+    ],
   },
   {
     username: "binnu",
     image: User1,
     lastMessage: "I found that thing superb.",
     time: "1w",
+    messages: [
+      {
+        recieved: [
+          {
+            message: "uncaught error at JSON 0, seriously?",
+          },
+        ],
+        sent: [
+          {
+            message:
+              "Check your encode method. may be something not right there ",
+          },
+        ],
+      },
+    ],
   },
   {
     username: "alexa",
     image: User3,
     lastMessage: "sorry",
     time: "3w",
+    messages: [
+      {
+        recieved: [
+          {
+            message: "check this out https:www.github.com/heroicons-react",
+          },
+        ],
+        sent: [
+          {
+            message: "I am using this, ):",
+          },
+        ],
+      },
+    ],
   },
   {
     username: "smith",
     image: User4,
     lastMessage: "hey there",
     time: "2d",
+    messages: [
+      {
+        recieved: [
+          {
+            message: "are you there, give me a reply when you get this",
+          },
+          {
+            message: "i want some help regarding react-routers",
+          },
+        ],
+        sent: [
+          {
+            message: "Refer to official docs of react-router-dom",
+          },
+          {
+            message: "It's always good to refer to the official docs.",
+          },
+        ],
+      },
+    ],
   },
   {
     username: "justin",
     image: User5,
     lastMessage: "xabardat",
     time: "4h",
+    messages: [
+      {
+        recieved: [
+          {
+            message: "Greetings !",
+          },
+        ],
+        sent: [
+          {
+            message: "Hello",
+          },
+        ],
+      },
+    ],
   },
 ];
