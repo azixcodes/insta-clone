@@ -10,7 +10,7 @@ import {
   Search,
 } from "./pages/index";
 import BottomNavigation from "./components/BottomNavigation";
-import MiniTopNavigation from "./components/MiniTopNavigation";
+// import MiniTopNavigation from "./components/MiniTopNavigation";
 import { useStateContext } from "./contexts/ContextApi";
 import MoreOptions from "./layouts/MoreOptions";
 import UploadFile from "./components/UploadFile"; //Upload file component when create button is clicked

@@ -17,12 +17,12 @@ const Sidebar = () => {
   } = useStateContext();
 
   const activeLink =
-    "flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg p-3 gap-3 group font-semibold";
+    "flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg p-3 gap-3 group font-semibold sm:justify-center md:justify-start";
   const NormalLink =
-    "flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg p-3 gap-3 group";
+    "flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg p-3 gap-3 group sm:justify-center md:justify-start";
   return (
     <div className="fixed overflow-hidden top-0 w-0 sm:w-20 md:w-56 flex flex-col border max-h-screen h-screen pt-6 pb-6">
-      <div className="mx-2 flex">
+      <div className="mx-2 flex sm:justify-center lg:justify-start">
         <NavLink to="/">
           <img
             src={InstaSmall}
@@ -39,7 +39,7 @@ const Sidebar = () => {
           />
         </NavLink>
       </div>
-      <div className="flex flex-col relative mt-4 gap-4 text-sm ml-2 flex-1">
+      <div className="flex flex-col relative mt-4 gap-4 text-sm ml-2 flex-1 sm:items-center">
         {links.map((link, index) => (
           <NavLink
             className={({ isActive }) => (isActive ? activeLink : NormalLink)}
@@ -58,7 +58,7 @@ const Sidebar = () => {
           </NavLink>
         ))}
         <div
-          className="flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg p-3 gap-3 group"
+          className="flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg p-3 gap-3 group sm:justify-center md:justify-start"
           onClick={() => {
             setaddPostModal(!addPostModal);
           }}
@@ -66,7 +66,7 @@ const Sidebar = () => {
           <PlusIcon className="h-5 w-5 border-2 border-slate-600 rounded-md group-hover:scale-105 ease-in-out" />
           <span className="sm:hidden md:block">Create</span>
         </div>
-        <NavLink className="flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg p-3 gap-3 group">
+        <NavLink className="flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg p-3 gap-3 group sm:justify-center md:justify-start">
           <img
             src={User}
             className="h-5 w-5 rounded-full group-hover:scale-105 ease-in-out"
@@ -77,7 +77,7 @@ const Sidebar = () => {
       </div>
       <div
         className=" flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer
-       items-center rounded-lg p-3 gap-3 group"
+       items-center rounded-lg p-3 gap-3 group sm:justify-center md:justify-start"
         onClick={() => {
           setmoreOptionsModal(!moreOptionsModal);
         }}
