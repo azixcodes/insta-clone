@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import User from "../data/user.jpeg";
-import { suggestions, tags } from "../data/dummy";
+import { tags } from "../data/dummy";
+const { faker } = require("@faker-js/faker");
 const MiniProfile = () => {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const suggestions = [...Array(5)].map((_, i) => ({
+      username: faker.internet.userName(),
+      avatar: faker.internet.avatar(),
+      text: faker.random.word(),
+      tagline: [
+        "new to instagram",
+        "followed by " + faker.internet.userName(),
+        "follows you",
+        "followed by " + faker.internet.userName(),
+        "suggested for you",
+      ],
+    }));
+    setUsers(suggestions);
+  }, []);
   return (
     <div className="flex flex-col max-w-xs w-96 z-0">
       <div className="flex flex-row justify-between mx-2 pb-4">
@@ -23,16 +41,15 @@ const MiniProfile = () => {
         </button>
       </div>
       <br />
-      {suggestions.map((item, index) => (
+      {users.map((item, index) => (
         <div className="flex flex-row justify-between mx-2 p-1" key={index}>
           <div className="flex flex-row gap-3">
-            <img src={item.image} className="h-7 w-7 rounded-full" alt="avt" />
+            <img src={item.avatar} className="h-7 w-7 rounded-full" alt="avt" />
             <div className="flex flex-col">
-              <p className="text-xs font-medium">
-                {item.username.toString().replace(" ", "")}
-              </p>
+              <p className="text-xs font-medium">{item.username}</p>
+
               <p className="text-xs text-gray-400 tracking-tighter">
-                {item.text}
+                {item.tagline[index]}
               </p>
             </div>
           </div>
