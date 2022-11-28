@@ -77,7 +77,7 @@ const Posts = () => {
                   {singlePost.likes} likes
                 </label>
                 <p className="text-xs text-slate-600">
-                  <span className="font-bold text-xs tracking-tighter">
+                  <span className="font-bold text-xs tracking-tightd">
                     {" "}
                     {singlePost.username.toString().replace(" ", "")}
                   </span>
@@ -95,7 +95,7 @@ const Posts = () => {
                 >
                   view all {singlePost.comments.length} comments
                 </label>
-                <p className="text-xs font-thin text-gray-400 ml-2">
+                <p className="text-xs font-thin text-gray-400 ml-2 pb-2">
                   {singlePost.time}{" "}
                 </p>
                 <div className="bg-white w-full flex flex-row justify-between border-t items-center p-2">

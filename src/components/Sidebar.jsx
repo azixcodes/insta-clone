@@ -66,7 +66,11 @@ const Sidebar = () => {
           <PlusIcon className="h-5 w-5 border-2 border-slate-600 rounded-md group-hover:scale-105 ease-in-out" />
           <span className="sm:hidden md:block">Create</span>
         </div>
-        <NavLink className="flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg  gap-3 group sm:justify-center md:justify-start">
+        <NavLink
+          className="flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center 
+        rounded-lg  gap-3 group sm:justify-center md:justify-start"
+          to="/profile"
+        >
           <img
             src={User}
             className="h-5 w-5 rounded-full group-hover:scale-105 ease-in-out"
