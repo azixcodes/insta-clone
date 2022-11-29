@@ -12,8 +12,8 @@ const Stories = () => {
   }, []);
   return (
     <div
-      className="border max-w-3xl w-96 h-32 scrollbar-track-white scrollbar-thumb-slate-400 scrollbar-thin 
-     overflow-x-auto flex flex-row gap-5  items-center mt-3 rounded-md  bg-white"
+      className="border max-w-3xl w-96 h-28 scrollbar-track-white scrollbar-thumb-slate-400 scrollbar-thin 
+     overflow-x-auto flex flex-row gap-5  items-center mt-3 rounded-md  bg-white p-3"
     >
       <div className="flex mx-3 gap-3">
         {users.map((item, index) => (

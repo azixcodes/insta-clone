@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { faker } from "@faker-js/faker";
+import Loader from "../layouts/Loader";
 import {
   HandThumbUpIcon,
   ChatBubbleOvalLeftIcon,
 } from "@heroicons/react/24/outline";
 const Explore = () => {
   const [posts, setPosts] = useState([]);
+  const [loaded, setLoaded] = useState(false);
   useEffect(() => {
-    const posts = [...Array(50)].map((_, i) => ({
+    setLoaded(false);
+    const posts = [...Array(20)].map((_, i) => ({
       username: faker.internet.userName(),
-      avatar: faker.internet.avatar(),
+      avatar: faker.image.sports(2500, 2345, true),
       interactions: [
         {
           likesCount: Math.floor(Math.random() * 5000) + 1,
@@ -18,6 +21,7 @@ const Explore = () => {
       ],
     }));
     setPosts(posts);
+    setLoaded(true);
   }, []);
   return (
     <div className="w-full md:pr-2 max-w-7xl flex flex-row flex-wrap gap-6 justify-center md:justify-start mt-5 m-0 mx-0">
@@ -46,6 +50,7 @@ const Explore = () => {
           </div>
         </div>
       ))}
+      {loaded ? null : <Loader />}
     </div>
   );
 };
