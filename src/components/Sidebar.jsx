@@ -80,8 +80,8 @@ const Sidebar = () => {
         </NavLink>
       </div>
       <div
-        className=" flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer
-       items-center rounded-lg gap-3 group sm:justify-center md:justify-start"
+        className=" flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center 
+        rounded-lg  gap-3 group sm:justify-center md:justify-start ml-2"
         onClick={() => {
           setmoreOptionsModal(!moreOptionsModal);
         }}
