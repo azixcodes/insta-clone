@@ -21,7 +21,7 @@ const PostModal = ({ postModalOpen, setpostModalOpen, post }) => {
       <div className="h-[32rem] w-[70%] bg-white flex flex-row">
         <div className="post w-1/2 border">
           <img
-            src={post.userPost}
+            src={post.post}
             alt="post"
             className="h-auto max-h-full w-full max-w-3xl"
           />
@@ -30,15 +30,15 @@ const PostModal = ({ postModalOpen, setpostModalOpen, post }) => {
           <div className="flex flex-col w-full border p-2">
             <div className="user flex flex-row gap-2 items-center">
               <img
-                src={post.profile}
+                src={post.avatar}
                 className="h-7 w-7 rounded-full"
                 alt="avatar"
               />
               <p className="text-sm text-gray-400 font-semibold whitespace-nowrap text-ellipsis">
-                {post.username.toString().replace(" ", "")}
+                {post.username}
               </p>
             </div>
-            <p className="ml-8 text-sm text-slate-700">{post.caption}</p>
+            <p className="ml-8 text-xs text-slate-700 ">{post.caption}</p>
           </div>
           <div className="comments flex flex-col h-full pb-2 overflow-y-auto max-h-full scrollbar-thin scrollbar-track-white scrollbar-thumb-slate-500">
             {post.comments.map((user, index) => (
@@ -49,7 +49,7 @@ const PostModal = ({ postModalOpen, setpostModalOpen, post }) => {
                   alt="avatar"
                 />
                 <div className="w-full flex flex-col ">
-                  <p className="text-xs text-slate-800 group cursor-pointer flex-1">
+                  <p className="text-xs text-slate-800 group cursor-pointer flex-1 whitespace-nowrap overflow-hidden text-ellipsis w-80">
                     {user.comment}
                   </p>
                   <div className=" flex flex-row justify-between">

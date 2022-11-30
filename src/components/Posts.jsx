@@ -17,15 +17,15 @@ const Posts = () => {
   const [hasText, sethasText] = useState(true);
 
   const [timelinePosts, settimelinePosts] = useState([]);
-
+  console.log(faker.date);
   useEffect(() => {
-    const posts = [...Array(10)].map((_, i) => ({
+    const posts = [...Array(20)].map((_, i) => ({
       username: faker.internet.userName(),
       avatar: faker.internet.avatar(),
       post: faker.image.sports(0, 0, true),
       time: faker.date.month(),
       caption: faker.commerce.productDescription(),
-      likes: Math.floor(Math.random * 500) + 1,
+      likes: Math.floor(Math.random() * 5000) + 1,
       comments: [
         {
           user: faker.internet.userName(),

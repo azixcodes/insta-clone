@@ -33,7 +33,7 @@ const App = () => {
         {/* <MiniTopNavigation /> */}
         <BottomNavigation />
       </div>
-      <div className="flex flex-row  w-full min-h-screen gap-4 md:gap-24">
+      <div className="flex flex-row  w-full min-h-screen gap-4 md:gap-24 ">
         <div className="w-0 sm:w-20 md:w-56 hidden sm:block">
           <Sidebar />
         </div>
