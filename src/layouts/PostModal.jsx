@@ -19,11 +19,11 @@ const PostModal = ({ postModalOpen, setpostModalOpen, post }) => {
         }}
       />
       <div className="h-[32rem] w-[70%] bg-white flex flex-row">
-        <div className="post w-1/2 border">
+        <div className="post w-1/2 border bg-black">
           <img
             src={post.post}
             alt="post"
-            className="h-auto max-h-full w-full max-w-3xl"
+            className="h-full max-h-full w-full max-w-3xl py-5"
           />
         </div>
         <div className="w-1/2 flex flex-col  p-2 mx-2">
@@ -34,7 +34,7 @@ const PostModal = ({ postModalOpen, setpostModalOpen, post }) => {
                 className="h-7 w-7 rounded-full"
                 alt="avatar"
               />
-              <p className="text-sm text-gray-400 font-semibold whitespace-nowrap text-ellipsis">
+              <p className="text-xs text-slate-700 font-semibold whitespace-nowrap text-ellipsis">
                 {post.username}
               </p>
             </div>

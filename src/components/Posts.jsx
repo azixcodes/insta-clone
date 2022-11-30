@@ -66,10 +66,10 @@ const Posts = () => {
   };
 
   return (
-    <div className="max-w-screen lg:max-w-6xl w-96 overflow-hidden">
+    <div className="max-w-screen lg:max-w-6xl w-[400px] overflow-hidden">
       {timelinePosts.map((post, index) => (
         <div
-          className="relative w-full rounded-md border-2  flex flex-col h-auto max-h-auto mb-3"
+          className="relative w-full rounded-md border p-[1px]  flex flex-col h-auto max-h-auto mb-3"
           key={index}
         >
           <div className="flex flex-col ">

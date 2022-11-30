@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <main
       className="w-screen md:w-full grid grid-cols-1 md:grid-cols-2 md:max-w-3xl 
-    xl:grid-cols-3 xl:max-w-6xl mx-auto max-w-3xl gap-6 z-0"
+    xl:grid-cols-3 xl:max-w-6xl mx-auto max-w-3xl gap-6 z-0 ml-20"
     >
       <section className="flex flex-col items-center gap-3">
         <Stories />
