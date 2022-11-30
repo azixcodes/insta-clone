@@ -12,7 +12,7 @@ const Explore = () => {
     setLoaded(false);
     const posts = [...Array(20)].map((_, i) => ({
       username: faker.internet.userName(),
-      avatar: faker.image.sports(2500, 2345, true),
+      avatar: faker.image.sports(0, 0, true),
       interactions: [
         {
           likesCount: Math.floor(Math.random() * 5000) + 1,
@@ -24,13 +24,18 @@ const Explore = () => {
     setLoaded(true);
   }, []);
   return (
-    <div className="w-full md:pr-2 max-w-7xl flex flex-row flex-wrap gap-6 justify-center md:justify-start mt-5 m-0 mx-0">
+    <div className="w-full md:pr-2 max-w-7xl flex flex-row flex-wrap gap-3 justify-center md:justify-start mt-5 m-0 mx-0">
       {posts.map((post, index) => (
         <div
-          className="relative md:h-56 md:w-auto w-full h-auto p-4 md:p-0 bg-white rounded-sm cursor-pointer group hover:opacity-90"
+          className="relative md:h-56 md:w-auto w-full h-auto  md:p-0
+           bg-white rounded-sm cursor-pointer group hover:opacity-90 "
           key={index}
         >
-          <img src={post.avatar} className="w-full h-full  " alt="post" />
+          <img
+            src={post.avatar}
+            className="w-[400px] max-w-[300px] min-w-[200px] h-[100px] min-h-[300px]  p-3"
+            alt="post"
+          />
           <div className=" flex-row hidden group-hover:flex ">
             {post.interactions.map((interactions, i) => (
               <div

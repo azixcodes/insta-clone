@@ -17,9 +17,9 @@ const Posts = () => {
   const [hasText, sethasText] = useState(true);
 
   const [timelinePosts, settimelinePosts] = useState([]);
-  console.log(faker.date);
+  const [loaded, setloaded] = useState(false);
   useEffect(() => {
-    const posts = [...Array(20)].map((_, i) => ({
+    const posts = [...Array(50)].map((_, i) => ({
       username: faker.internet.userName(),
       avatar: faker.internet.avatar(),
       post: faker.image.sports(0, 0, true),
@@ -49,6 +49,7 @@ const Posts = () => {
       ],
     }));
     settimelinePosts(posts);
+    setloaded(true);
   }, []);
 
   const handleClose = () => {
@@ -91,7 +92,11 @@ const Posts = () => {
                 ...
               </p>
             </div>
-            <img src={post.post} alt="post" className="w-full h-full" />
+            {loaded ? (
+              <img src={post.post} alt="post" className="w-full h-full" />
+            ) : (
+              "loading your data"
+            )}
 
             <div className="mx-2 flex flex-row justify-between mt-2">
               <div className="flex gap-3">
