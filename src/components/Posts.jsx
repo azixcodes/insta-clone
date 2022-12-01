@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-// import { posts, suggestions } from "../data/dummy";
+import React, { useState } from "react";
 import { useStateContext } from "../contexts/ContextApi";
 import {
   PaperAirplaneIcon,
@@ -10,47 +9,11 @@ import {
 } from "@heroicons/react/24/outline";
 import PostOptions from "../layouts/PostOptions";
 import PostModal from "../layouts/PostModal";
-import { faker } from "@faker-js/faker";
+
 const Posts = () => {
   const [modalOpen, setmodalOpen] = useState(false);
   const [post, setpost] = useState([]);
   const [hasText, sethasText] = useState(true);
-
-  const [timelinePosts, settimelinePosts] = useState([]);
-  const [loaded, setloaded] = useState(false);
-  useEffect(() => {
-    const posts = [...Array(50)].map((_, i) => ({
-      username: faker.internet.userName(),
-      avatar: faker.internet.avatar(),
-      post: faker.image.sports(0, 0, true),
-      time: faker.date.month(),
-      caption: faker.commerce.productDescription(),
-      likes: Math.floor(Math.random() * 5000) + 1,
-      comments: [
-        {
-          user: faker.internet.userName(),
-          image: faker.internet.avatar(),
-          comment:
-            "yeah it's amazing.. I want to get the full link from youtube and this si the ebst I want to get the full link from youtube and this si the ebst",
-          timeStamp: faker.date.month - Date.UTC,
-        },
-        {
-          user: faker.internet.userName(),
-          image: faker.internet.avatar(),
-          comment: "already on it...",
-          timeStamp: faker.date.month - Date.UTC,
-        },
-        {
-          user: faker.internet.userName(),
-          image: faker.internet.avatar(),
-          comment: "get some help",
-          timeStamp: faker.date.month - Date.UTC,
-        },
-      ],
-    }));
-    settimelinePosts(posts);
-    setloaded(true);
-  }, []);
 
   const handleClose = () => {
     setmodalOpen(false);
@@ -60,7 +23,8 @@ const Posts = () => {
       sethasText(true);
     } else sethasText(false);
   };
-  const { postModalOpen, setpostModalOpen } = useStateContext();
+  const { postModalOpen, setpostModalOpen, timelinePosts, loaded } =
+    useStateContext();
   const handleClickComments = (post) => {
     setpost(post);
     setpostModalOpen(true);
