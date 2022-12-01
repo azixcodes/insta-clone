@@ -1,15 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { faker } from "@faker-js/faker";
-import Loader from "../layouts/Loader";
 import {
   HandThumbUpIcon,
   ChatBubbleOvalLeftIcon,
 } from "@heroicons/react/24/outline";
 const Explore = () => {
   const [posts, setPosts] = useState([]);
-  const [loaded, setLoaded] = useState(false);
+  const [online, setonline] = useState(navigator.onLine);
+
   useEffect(() => {
-    setLoaded(false);
+    window.addEventListener("online", () => {
+      setonline(true);
+    });
+    window.addEventListener("offline", () => {
+      setonline(false);
+    });
+  }, []);
+
+  useEffect(() => {
     const posts = [...Array(20)].map((_, i) => ({
       username: faker.internet.userName(),
       avatar: faker.image.sports(0, 0, true),
@@ -21,41 +29,45 @@ const Explore = () => {
       ],
     }));
     setPosts(posts);
-    setLoaded(true);
   }, []);
   return (
     <div className="w-full md:pr-2 max-w-7xl flex flex-row flex-wrap gap-3 justify-center md:justify-start mt-5 m-0 mx-0">
-      {posts.map((post, index) => (
-        <div
-          className="relative md:h-56 md:w-auto w-full h-auto  md:p-0
+      {online ? (
+        <>
+          {posts.map((post, index) => (
+            <div
+              className="relative md:h-56 md:w-auto w-full h-auto  md:p-0
            bg-white rounded-sm cursor-pointer group hover:opacity-90 "
-          key={index}
-        >
-          <img
-            src={post.avatar}
-            className="w-[400px] max-w-[300px] min-w-[200px] h-[100px] min-h-[300px]  p-3"
-            alt="post"
-          />
-          <div className=" flex-row hidden group-hover:flex ">
-            {post.interactions.map((interactions, i) => (
-              <div
-                className="absolute top-4 left-4 flex gap-4 items-center justify-center flex-row w-full  h-full text-sm font-semibold z-50 text-white"
-                key={i}
-              >
-                <div className="flex flex-row ">
-                  <HandThumbUpIcon className="h-5 w-5" />
-                  <p>{interactions.likesCount}</p>
-                </div>
-                <div className="flex flex-row ">
-                  <ChatBubbleOvalLeftIcon className="h-5 w-5" />
-                  <p>{interactions.commentsCount}</p>
-                </div>
+              key={index}
+            >
+              <img
+                src={post.avatar}
+                className="w-[400px] max-w-[300px] min-w-[200px] h-[100px] min-h-[300px]  p-3"
+                alt="post"
+              />
+              <div className=" flex-row hidden group-hover:flex ">
+                {post.interactions.map((interactions, i) => (
+                  <div
+                    className="absolute top-4 left-4 flex gap-4 items-center justify-center flex-row w-full  h-full text-sm font-semibold z-50 text-white"
+                    key={i}
+                  >
+                    <div className="flex flex-row ">
+                      <HandThumbUpIcon className="h-5 w-5" />
+                      <p>{interactions.likesCount}</p>
+                    </div>
+                    <div className="flex flex-row ">
+                      <ChatBubbleOvalLeftIcon className="h-5 w-5" />
+                      <p>{interactions.commentsCount}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
-      ))}
-      {loaded ? null : <Loader />}
+            </div>
+          ))}
+        </>
+      ) : (
+        <h2>You are not connected</h2>
+      )}
     </div>
   );
 };
