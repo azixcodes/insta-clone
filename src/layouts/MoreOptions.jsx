@@ -2,8 +2,8 @@ import React from "react";
 import { minibar } from "../data/dummy";
 const MoreOptions = () => {
   return (
-    <div className="flex flex-col items-center h-48 w-52 rounded-sm overflow-hidden bg-white  shadow-xl border">
-      <div className="absolute h-4 w-4 -bottom-2 bg-white left-6 rotate-45"></div>
+    <div className="flex flex-col items-center h-[250px] w-52 rounded-sm overflow-hidden bg-white  shadow-xl border">
+      {/* <div className="absolute h-4 w-4 -bottom-2 bg-white left-6 rotate-45"></div> */}
       <div className="flex flex-col w-full gap-2">
         {minibar.map((item, index) => (
           <div
@@ -14,6 +14,13 @@ const MoreOptions = () => {
             <p>{item.label}</p>
           </div>
         ))}
+        <div className="h-[5px] w-full bg-gray-100"></div>
+        <div className="p-1  pl-2 cursor-pointer hover:bg-gray-200 rounded-sm">
+          Switch Accounts
+        </div>
+        <div className="p-1  pl-2 cursor-pointer hover:bg-gray-200 rounded-sm">
+          Log out
+        </div>
       </div>
     </div>
   );

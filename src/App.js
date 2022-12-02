@@ -55,7 +55,7 @@ const App = () => {
           />
         )}
         {moreOptionsModal && (
-          <div className="fixed top-[342px] left-2">
+          <div className="fixed top-[300px] left-2">
             <MoreOptions />
           </div>
         )}

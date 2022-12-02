@@ -43,7 +43,7 @@ const PostModal = ({ postModalOpen, setpostModalOpen, post }) => {
           <div className="comments flex flex-col h-full pb-2 overflow-y-auto max-h-full scrollbar-thin ">
             {post.comments.map((user, index) => (
               <div
-                className="flex flex-row gap-2 items-center px-2 m-2"
+                className="flex flex-row gap-2 items-center px-2 mt-2"
                 key={index}
               >
                 <img
