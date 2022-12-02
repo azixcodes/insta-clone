@@ -3,7 +3,7 @@ import { XMarkIcon, HeartIcon } from "@heroicons/react/24/outline";
 // import { useStateContext } from "../contexts/ContextApi";
 const PostModal = ({ postModalOpen, setpostModalOpen, post }) => {
   //   const { post } = useStateContext();
-  console.log(post);
+
   return (
     <div
       className={`h-full w-screen fixed bg-gray-500 bg-opacity-60 top-0 left-0 ${

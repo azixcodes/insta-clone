@@ -30,8 +30,6 @@ const Posts = () => {
     setpostModalOpen(true);
   };
 
-  console.log(loaded);
-
   return (
     <div className="max-w-screen lg:max-w-6xl w-[400px] overflow-hidden">
       {timelinePosts.map((post, index) => (
