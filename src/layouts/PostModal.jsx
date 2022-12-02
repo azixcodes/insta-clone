@@ -19,11 +19,11 @@ const PostModal = ({ postModalOpen, setpostModalOpen, post }) => {
         }}
       />
       <div className="h-[32rem] w-[70%] bg-white flex flex-row">
-        <div className="post w-1/2 border bg-black">
+        <div className="post w-1/2 border bg-black flex flex-col items-center justify-center">
           <img
             src={post.post}
             alt="post"
-            className="h-full max-h-full w-full max-w-3xl py-5"
+            className="h-auto max-h-full w-full max-w-3xl py-5"
           />
         </div>
         <div className="w-1/2 flex flex-col  p-2 mx-2">
@@ -40,9 +40,12 @@ const PostModal = ({ postModalOpen, setpostModalOpen, post }) => {
             </div>
             <p className="ml-8 text-xs text-slate-700 ">{post.caption}</p>
           </div>
-          <div className="comments flex flex-col h-full pb-2 overflow-y-auto max-h-full scrollbar-thin scrollbar-track-white scrollbar-thumb-slate-500">
+          <div className="comments flex flex-col h-full pb-2 overflow-y-auto max-h-full scrollbar-thin ">
             {post.comments.map((user, index) => (
-              <div className="flex flex-row gap-2 items-center" key={index}>
+              <div
+                className="flex flex-row gap-2 items-center px-2 m-2"
+                key={index}
+              >
                 <img
                   src={user.image}
                   className="h-10 w-10 rounded-full  p-1 border border-white shadow-sm"

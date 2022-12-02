@@ -11,11 +11,10 @@ export const ContextApi = ({ children }) => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    if (postModalOpen) {
+    if (addPostModal || postModalOpen) {
       document.body.style.overflow = "hidden";
-      console.log(document.body.style.overflow);
     }
-  }, [postModalOpen]);
+  }, [postModalOpen, addPostModal]);
   useEffect(() => {
     const posts = [...Array(50)].map((_, i) => ({
       username: faker.internet.userName(),

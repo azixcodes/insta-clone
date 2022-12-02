@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useStateContext } from "../contexts/ContextApi";
 import {
   PaperAirplaneIcon,
@@ -29,7 +29,13 @@ const Posts = () => {
     setpost(post);
     setpostModalOpen(true);
   };
-
+  useEffect(() => {
+    if (modalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [modalOpen]);
   return (
     <div className="max-w-screen lg:max-w-6xl w-[400px] overflow-hidden">
       {timelinePosts.map((post, index) => (
