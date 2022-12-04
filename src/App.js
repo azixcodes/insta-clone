@@ -34,7 +34,7 @@ const App = () => {
         <BottomNavigation />
       </div>
       <div className="flex flex-row  w-full min-h-screen gap-4 md:gap-24 ">
-        <div className="w-0 sm:w-20 md:w-56 hidden sm:block">
+        <div className="w-0 sm:w-20 lg:w-56 hidden lg:block ">
           <Sidebar />
         </div>
         <div className="routes ">
@@ -55,7 +55,7 @@ const App = () => {
           />
         )}
         {moreOptionsModal && (
-          <div className="fixed top-[300px] left-2">
+          <div className="fixed top-[302px] left-2">
             <MoreOptions />
           </div>
         )}

@@ -21,7 +21,7 @@ const Sidebar = () => {
   const NormalLink =
     "flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg p-0 gap-3 group sm:justify-center md:justify-start";
   return (
-    <div className="fixed overflow-hidden top-0 w-0 sm:w-20 md:w-56 flex flex-col border max-h-screen h-screen pt-6 pb-6">
+    <div className="fixed overflow-hidden top-0 w-0 sm:w-20 lg:w-56 flex flex-col border max-h-screen h-screen pt-6 pb-6 ">
       <div className="mx-1 flex sm:justify-center md:justify-start w-full">
         <NavLink to="/">
           <img
@@ -54,7 +54,7 @@ const Sidebar = () => {
               </span>
             )}
 
-            <span className="hidden md:block">{link.label}</span>
+            <span className="hidden lg:block">{link.label}</span>
           </NavLink>
         ))}
         <div
@@ -64,7 +64,7 @@ const Sidebar = () => {
           }}
         >
           <PlusIcon className="h-5 w-5 border-2 border-slate-600 rounded-md group-hover:scale-105 ease-in-out" />
-          <span className="sm:hidden md:block">Create</span>
+          <span className="sm:hidden lg:block">Create</span>
         </div>
         <NavLink
           className="flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center 
@@ -76,7 +76,7 @@ const Sidebar = () => {
             className="h-5 w-5 rounded-full group-hover:scale-105 ease-in-out"
             alt="user"
           />
-          <span className="sm:hidden md:block">Profile</span>
+          <span className="sm:hidden lg:block">Profile</span>
         </NavLink>
       </div>
       <div
