@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import InstaSmall from "../data/insta-text.png";
 import InstamLarge from "../data/insta.png";
 import { links } from "../data/dummy";
@@ -15,7 +15,15 @@ const Sidebar = () => {
     moreOptionsModal,
     setmoreOptionsModal,
   } = useStateContext();
-
+  const moreOptionsRef = useRef();
+  useEffect(() => {
+    window.addEventListener("click", (e) => {
+      if (!moreOptionsRef.current.contains(e.target)) {
+        // setmoreOptionsModal(false);
+        setmoreOptionsModal(false);
+      }
+    });
+  });
   const activeLink =
     "flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg p-0 gap-3 group font-semibold sm:justify-center md:justify-start";
   const NormalLink =
@@ -82,6 +90,7 @@ const Sidebar = () => {
       <div
         className=" flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center 
         rounded-lg  gap-3 group sm:justify-center md:justify-start ml-2"
+        ref={moreOptionsRef}
         onClick={() => {
           setmoreOptionsModal(!moreOptionsModal);
         }}

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { minibar } from "../data/dummy";
+
 const MoreOptions = () => {
   return (
     <div className="flex flex-col items-center h-[250px] w-52 rounded-sm overflow-hidden bg-white  shadow-xl border">

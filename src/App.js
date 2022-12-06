@@ -16,7 +16,12 @@ import { useStateContext } from "./contexts/ContextApi";
 import MoreOptions from "./layouts/MoreOptions";
 import UploadFile from "./components/UploadFile"; //Upload file component when create button is clicked
 const App = () => {
-  const { addPostModal, setaddPostModal, moreOptionsModal } = useStateContext();
+  const {
+    addPostModal,
+    setaddPostModal,
+    moreOptionsModal,
+    setmoreOptionsModal,
+  } = useStateContext();
 
   const handleClickOutSide = () => {
     setaddPostModal(!addPostModal);
@@ -28,6 +33,7 @@ const App = () => {
       document.body.style.overflow = "unset";
     }
   });
+
   return (
     <BrowserRouter>
       <div className="sm:hidden ">
