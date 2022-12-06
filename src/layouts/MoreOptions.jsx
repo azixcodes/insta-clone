@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { minibar } from "../data/dummy";
 const MoreOptions = () => {
   return (
@@ -11,7 +12,11 @@ const MoreOptions = () => {
             key={index}
           >
             <span className="minibar-icons">{item.icon}</span>
-            <p>{item.label}</p>
+            {item.label === "Saved" ? (
+              <NavLink to="/saved">{item.label}</NavLink>
+            ) : (
+              <p>{item.label}</p>
+            )}
           </div>
         ))}
         <div className="h-[5px] w-full bg-gray-100"></div>

@@ -40,7 +40,7 @@ const PostModal = ({ postModalOpen, setpostModalOpen, post }) => {
           />
         </div>
         <div className="w-1/2 flex flex-col ">
-          <div className="flex flex-col w-full border p-2">
+          <div className="flex flex-col w-full border px-2 p-2">
             <div className="user flex flex-row gap-2 items-center">
               <img
                 src={post.avatar}
@@ -92,8 +92,8 @@ const PostModal = ({ postModalOpen, setpostModalOpen, post }) => {
               <BookmarkIcon className="h-5 w-5 hover:text-gray-400 cursor-pointer" />
             </div>
             <div className="px-2">
-              <p className="text-xs font-semibold tracking-tighter ">
-                {post.likes} Likes
+              <p className="text-xs font-semibold tracking-normal ">
+                {post.likes} likes
               </p>
               <p className="text-xs text-gray-500">{post.time}</p>
             </div>

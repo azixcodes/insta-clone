@@ -8,6 +8,7 @@ import {
   Notifications,
   Profile,
   Search,
+  Saved,
 } from "./pages/index";
 import BottomNavigation from "./components/BottomNavigation";
 // import MiniTopNavigation from "./components/MiniTopNavigation";
@@ -45,6 +46,7 @@ const App = () => {
             <Route path="/messages" element={<Messages />} />
             <Route path="/search" element={<Search />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/saved" element={<Saved />} />
           </Routes>
         </div>
         {/* conditionally rendering upload post component */}

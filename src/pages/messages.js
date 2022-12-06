@@ -80,7 +80,7 @@ const Messages = () => {
                       {message.username}
                     </p>
                     <div className="flex flex-row gap-3">
-                      <div className="text-xs text-gray-400 font-semibold tracking-tighter">
+                      <div className="text-xs text-gray-400 ">
                         {message.messages.map((item, i) => {
                           return (
                             <p
