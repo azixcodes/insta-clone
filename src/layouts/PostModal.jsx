@@ -1,8 +1,21 @@
-import React from "react";
-import { XMarkIcon, HeartIcon } from "@heroicons/react/24/outline";
+import React, { useState } from "react";
+import {
+  XMarkIcon,
+  HeartIcon,
+  PaperAirplaneIcon,
+  ChatBubbleOvalLeftIcon,
+  BookmarkIcon,
+  FaceSmileIcon,
+} from "@heroicons/react/24/outline";
+
 // import { useStateContext } from "../contexts/ContextApi";
 const PostModal = ({ postModalOpen, setpostModalOpen, post }) => {
-  //   const { post } = useStateContext();
+  const [hasText, sethasText] = useState(true);
+  const handleTextChange = (e) => {
+    if (e.length <= 0) {
+      sethasText(true);
+    } else sethasText(false);
+  };
 
   return (
     <div
@@ -26,7 +39,7 @@ const PostModal = ({ postModalOpen, setpostModalOpen, post }) => {
             className="h-auto max-h-full w-full max-w-3xl py-5"
           />
         </div>
-        <div className="w-1/2 flex flex-col  p-2 mx-2">
+        <div className="w-1/2 flex flex-col ">
           <div className="flex flex-col w-full border p-2">
             <div className="user flex flex-row gap-2 items-center">
               <img
@@ -68,6 +81,43 @@ const PostModal = ({ postModalOpen, setpostModalOpen, post }) => {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="h-48 w-full flex flex-col border gap-2 justify-between">
+            <div className="header w-full flex flex-row justify-between px-2 mt-2">
+              <div className="flex flex-row gap-3">
+                <HeartIcon className="h-5 w-5 hover:text-gray-400 cursor-pointer" />
+                <ChatBubbleOvalLeftIcon className="h-5 w-5 hover:text-gray-400 cursor-pointer" />
+                <PaperAirplaneIcon className="h-5 w-5 hover:text-gray-400 cursor-pointer -rotate-45" />
+              </div>
+              <BookmarkIcon className="h-5 w-5 hover:text-gray-400 cursor-pointer" />
+            </div>
+            <div className="px-2">
+              <p className="text-xs font-semibold tracking-tighter ">
+                {post.likes} Likes
+              </p>
+              <p className="text-xs text-gray-500">{post.time}</p>
+            </div>
+            <div className="comment-box w-full border px-2 flex flex-row items-center h-10 justify-between">
+              <div className="flex flex-row gap-2">
+                <FaceSmileIcon className="cursor-pointer h-5 w-5 hover:bg-slate-100" />
+                <input
+                  type="text"
+                  placeholder="Add a comment"
+                  className="outline-none bg-transparent text-xs"
+                  onChange={(e) => {
+                    handleTextChange(e.target.value);
+                  }}
+                />
+              </div>
+              <button
+                className={`text-sky-500 text-xs font-medium ${
+                  hasText && "cursor-not-allowed"
+                }`}
+                disabled={hasText}
+              >
+                post
+              </button>
+            </div>
           </div>
         </div>
       </div>

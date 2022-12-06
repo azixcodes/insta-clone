@@ -63,7 +63,7 @@ const Posts = () => {
               </p>
             </div>
             {loaded ? (
-              <img src={post.post} alt="post" className="w-full h-full" />
+              <img src={post.post} alt="post" className="w-full h-auto" />
             ) : (
               "loading your data"
             )}
