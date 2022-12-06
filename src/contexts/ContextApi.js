@@ -9,7 +9,7 @@ export const ContextApi = ({ children }) => {
   const [post, setpost] = useState([]);
   const [timelinePosts, settimelinePosts] = useState([]);
   const [loaded, setLoaded] = useState(false);
-
+  const [savedItems, setSavedItems] = useState([]);
   useEffect(() => {
     if (addPostModal || postModalOpen) {
       document.body.style.overflow = "hidden";
@@ -23,27 +23,6 @@ export const ContextApi = ({ children }) => {
       time: faker.date.month(),
       caption: faker.commerce.productDescription(),
       likes: Math.floor(Math.random() * 5000) + 1,
-      // comments: [
-      //   {
-      //     user: faker.internet.userName(),
-      //     image: faker.internet.avatar(),
-      //     comment:
-      //       "yeah it's amazing.. I want to get the full link from youtube and this si the ebst I want to get the full link from youtube and this si the ebst",
-      //     timeStamp: faker.date.month - Date.UTC,
-      //   },
-      //   {
-      //     user: faker.internet.userName(),
-      //     image: faker.internet.avatar(),
-      //     comment: "already on it...",
-      //     timeStamp: faker.date.month - Date.UTC,
-      //   },
-      //   {
-      //     user: faker.internet.userName(),
-      //     image: faker.internet.avatar(),
-      //     comment: "get some help",
-      //     timeStamp: faker.date.month - Date.UTC,
-      //   },
-      // ],
       comments: [...Array(Math.floor(Math.random() * 50) + 1)].map(
         (_, comment) => ({
           user: faker.internet.userName(),
@@ -56,6 +35,11 @@ export const ContextApi = ({ children }) => {
     setLoaded(true);
     settimelinePosts(posts);
   }, []);
+
+  const handleSavedItems = (item) => {
+    setSavedItems([...savedItems], item);
+    setSavedItems(savedItems);
+  };
 
   return (
     <AppContext.Provider
@@ -70,6 +54,9 @@ export const ContextApi = ({ children }) => {
         setpost,
         timelinePosts,
         loaded,
+        handleSavedItems,
+        savedItems,
+        setSavedItems,
       }}
     >
       {children}

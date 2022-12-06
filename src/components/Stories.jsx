@@ -10,6 +10,7 @@ const Stories = () => {
     }));
     setUsers(suggestions);
   }, []);
+
   return (
     <div
       className="border max-w-3xl w-[400px] h-28  scrollbar-thin 

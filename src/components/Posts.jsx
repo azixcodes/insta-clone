@@ -9,7 +9,7 @@ import {
 } from "@heroicons/react/24/outline";
 import PostOptions from "../layouts/PostOptions";
 import PostModal from "../layouts/PostModal";
-
+import BookMarkFilled from "@heroicons/react/20/solid/BookmarkIcon";
 const Posts = () => {
   const [modalOpen, setmodalOpen] = useState(false);
   const [post, setpost] = useState([]);
@@ -23,8 +23,14 @@ const Posts = () => {
       sethasText(true);
     } else sethasText(false);
   };
-  const { postModalOpen, setpostModalOpen, timelinePosts, loaded } =
-    useStateContext();
+  const {
+    postModalOpen,
+    setpostModalOpen,
+    timelinePosts,
+    loaded,
+    savedItems,
+    setSavedItems,
+  } = useStateContext();
   const handleClickComments = (post) => {
     setpost(post);
     setpostModalOpen(true);
@@ -36,6 +42,13 @@ const Posts = () => {
       document.body.style.overflow = "unset";
     }
   }, [modalOpen]);
+  const handleSaveClick = (post) => {
+    if (savedItems.includes(post)) {
+      alert("this post has been already saved to your profile");
+    } else {
+      setSavedItems([...savedItems, post]);
+    }
+  };
   return (
     <div className="max-w-screen lg:max-w-6xl w-[400px] overflow-hidden">
       {timelinePosts.map((post, index) => (
@@ -74,7 +87,14 @@ const Posts = () => {
                 <ChatBubbleOvalLeftIcon className="h-5 w-5 hover:text-gray-400 cursor-pointer" />
                 <PaperAirplaneIcon className="h-5 w-5 hover:text-gray-400 cursor-pointer -rotate-45" />
               </div>
-              <BookmarkIcon className="h-5 w-5 hover:text-gray-400 cursor-pointer " />
+              {savedItems.includes(post) ? (
+                <BookMarkFilled className="h-5 w-5 " aria-disabled />
+              ) : (
+                <BookmarkIcon
+                  className="h-5 w-5 hover:text-gray-400 cursor-pointer "
+                  onClick={() => handleSaveClick(post)}
+                />
+              )}
             </div>
 
             <div className="post-description flex flex-col mt-2 mx-2 ">
