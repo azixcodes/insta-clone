@@ -10,18 +10,13 @@ import {
   Search,
   Saved,
 } from "./pages/index";
-import BottomNavigation from "./components/BottomNavigation";
+// import BottomNavigation from "./components/BottomNavigation";
 // import MiniTopNavigation from "./components/MiniTopNavigation";
 import { useStateContext } from "./contexts/ContextApi";
 import MoreOptions from "./layouts/MoreOptions";
 import UploadFile from "./components/UploadFile"; //Upload file component when create button is clicked
 const App = () => {
-  const {
-    addPostModal,
-    setaddPostModal,
-    moreOptionsModal,
-    setmoreOptionsModal,
-  } = useStateContext();
+  const { addPostModal, setaddPostModal, moreOptionsModal } = useStateContext();
 
   const handleClickOutSide = () => {
     setaddPostModal(!addPostModal);

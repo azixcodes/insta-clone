@@ -82,6 +82,7 @@ const Sidebar = () => {
           <img
             src={User}
             className="h-5 w-5 group-hover:scale-105 ease-in-out  rounded-full"
+            alt="profile"
           />
           <label className="hidden lg:block cursor-pointer">Profile</label>
         </NavLink>
