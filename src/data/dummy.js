@@ -30,7 +30,7 @@ export const links = [
   {
     label: "Messages",
     path: "/messages",
-    icon: <PaperAirplaneIcon />,
+    icon: <PaperAirplaneIcon style={{ rotate: "-30deg" }} />,
   },
   {
     label: "Explore",
