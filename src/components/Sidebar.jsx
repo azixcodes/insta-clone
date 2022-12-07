@@ -3,7 +3,6 @@ import InstaSmall from "../data/insta-text.png";
 import InstamLarge from "../data/insta-logo.png";
 import { links } from "../data/dummy";
 import { NavLink } from "react-router-dom";
-import { IoPaperPlaneOutline, IoTerminal } from "react-icons/io5";
 import { PlusIcon, Bars3Icon } from "@heroicons/react/24/outline";
 import User from "../data/user.jpeg";
 
@@ -25,15 +24,15 @@ const Sidebar = () => {
     });
   });
   const activeLink =
-    "flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg p-0 gap-2 group font-semibold md:justify-center lg:justify-start";
+    "flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg p-0 gap-2 group font-semibold sm:justify-center lg:justify-start";
   const NormalLink =
-    "flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg p-0 gap-2 group md:justify-center lg:justify-start";
+    "flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg p-0 gap-2 group sm:justify-center lg:justify-start";
   return (
     <div
-      className="fixed min-h-screen h-screen hidden md:w-20 lg:w-48 border md:flex flex-col
+      className="fixed min-h-screen h-screen hidden sm:w-20 lg:w-48 border sm:flex flex-col
      md:items-center lg:items-start pt-4"
     >
-      <div className="logo flex w-full md:justify-center lg:justify-start px-2">
+      <div className="logo flex w-full sm:justify-center lg:justify-start px-2">
         <NavLink to="/">
           <img
             src={InstaSmall}
@@ -68,13 +67,13 @@ const Sidebar = () => {
           </NavLink>
         ))}
         <div
-          className="flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg gap-3 group md:justify-center lg:justify-start"
+          className="flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg gap-3 group sm:justify-center lg:justify-start"
           onClick={() => {
             setaddPostModal(!addPostModal);
           }}
         >
           <PlusIcon className="h-5 w-5 border-2 border-slate-600 rounded-md group-hover:scale-105 ease-in-out" />
-          <span className="md:hidden lg:block">Create</span>
+          <span className="hidden lg:block">Create</span>
         </div>
         <NavLink
           className={({ isActive }) => (isActive ? activeLink : NormalLink)}
@@ -90,7 +89,7 @@ const Sidebar = () => {
       {/* More options Modal */}
       <div
         className=" flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center 
-        rounded-lg  gap-3 group md:justify-center lg:justify-start px-2"
+        rounded-lg  gap-3 group sm:justify-center lg:justify-start px-2"
         ref={moreOptionsRef}
         onClick={() => {
           setmoreOptionsModal(!moreOptionsModal);
@@ -98,9 +97,7 @@ const Sidebar = () => {
       >
         <Bars3Icon className="h-9 w-5 group-hover:scale-105 ease-in-out" />
         <span
-          className={`${
-            moreOptionsModal && "font-semibold"
-          } md:hidden lg:block`}
+          className={`${moreOptionsModal && "font-semibold"} hidden lg:block`}
         >
           Create
         </span>

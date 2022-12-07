@@ -48,6 +48,17 @@ const App = () => {
           <Route path="/saved" element={<Saved />} />
         </Routes>
       </div>
+      {addPostModal && (
+        <UploadFile
+          handleClickOutSide={handleClickOutSide}
+          addPostModal={addPostModal}
+        />
+      )}
+      {moreOptionsModal && (
+        <div className="absolute bottom-12 left-2 hidden md:block">
+          <MoreOptions />
+        </div>
+      )}
     </div>
   );
 };
