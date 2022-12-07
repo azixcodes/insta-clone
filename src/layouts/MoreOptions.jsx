@@ -4,7 +4,7 @@ import { minibar } from "../data/dummy";
 
 const MoreOptions = () => {
   return (
-    <div className="flex flex-col items-center h-[250px] w-52 rounded-sm overflow-hidden bg-white  shadow-xl border">
+    <div className="flex flex-col items-center h-[250px] w-52 rounded-sm  bg-white  shadow-xl border">
       {/* <div className="absolute h-4 w-4 -bottom-2 bg-white left-6 rotate-45"></div> */}
       <div className="flex flex-col w-full gap-2">
         {minibar.map((item, index) => (

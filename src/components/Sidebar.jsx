@@ -29,12 +29,12 @@ const Sidebar = () => {
   const NormalLink =
     "flex flex-row w-11/12 h-10 bg-white hover:bg-slate-100 cursor-pointer items-center rounded-lg p-0 gap-3 group sm:justify-center md:justify-start";
   return (
-    <div className="fixed overflow-hidden top-0 w-0 sm:w-20 lg:w-56 flex flex-col border max-h-screen h-screen pt-6 pb-6 ">
+    <div className="fixed overflow-hidden top-0 w-0 md:w-20 lg:w-56 flex flex-col border max-h-screen h-screen pt-6 pb-6 ">
       <div className="mx-1 flex sm:justify-center md:justify-start w-full">
         <NavLink to="/">
           <img
             src={InstaSmall}
-            className="h-10 cursor-pointer hidden md:block"
+            className="h-10 cursor-pointer hidden lg:block"
             alt="logo"
           />
         </NavLink>
@@ -42,7 +42,7 @@ const Sidebar = () => {
         <NavLink to="/">
           <img
             src={InstamLarge}
-            className="h-5 cursor-pointer block md:hidden"
+            className="h-5 cursor-pointer block lg:hidden"
             alt="logo"
           />
         </NavLink>
