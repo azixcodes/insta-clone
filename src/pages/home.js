@@ -10,7 +10,7 @@ const Home = () => {
         <Posts />
       </div>
       <div className="absolute top-10 right-16 hidden lg:block w-96 ">
-        <MiniProfile />
+        {/* <MiniProfile /> */}
       </div>
     </main>
   );

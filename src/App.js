@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Sidebar from "./components/Sidebar";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import {
   Home,
   Explore,
@@ -35,40 +35,20 @@ const App = () => {
   });
 
   return (
-    <BrowserRouter>
-      <div className="sm:hidden ">
-        {/* <MiniTopNavigation /> */}
-        <BottomNavigation />
+    <div className="grid grid-cols-1 md:grid-cols-2 px-2 md:px-0">
+      <Sidebar />
+      <div className="routes relative md:left-24 lg:left-60 p-2 md:px-0">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/explore" element={<Explore />} />
+          <Route path="/notifications" element={<Notifications />} />
+          <Route path="/messages" element={<Messages />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/saved" element={<Saved />} />
+        </Routes>
       </div>
-      <div className="flex flex-row  w-full min-h-screen gap-4 md:gap-24 ">
-        <div className="hidden md:block ">
-          <Sidebar />
-        </div>
-        <div className="routes ">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/explore" element={<Explore />} />
-            <Route path="/notifications" element={<Notifications />} />
-            <Route path="/messages" element={<Messages />} />
-            <Route path="/search" element={<Search />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/saved" element={<Saved />} />
-          </Routes>
-        </div>
-        {/* conditionally rendering upload post component */}
-        {addPostModal && (
-          <UploadFile
-            handleClickOutSide={handleClickOutSide}
-            addPostModal={addPostModal}
-          />
-        )}
-        {moreOptionsModal && (
-          <div className="absolute bottom-20 left-2 hidden md:block">
-            <MoreOptions />
-          </div>
-        )}
-      </div>
-    </BrowserRouter>
+    </div>
   );
 };
 
