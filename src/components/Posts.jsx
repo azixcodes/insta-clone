@@ -98,8 +98,8 @@ const Posts = () => {
             </div>
 
             <div className="post-description flex flex-col mt-2 mx-2 ">
-              <label className="font-semibold text-sm tracking-tight pb-1">
-                {post.likes} likes
+              <label className="font-semibold text-xs tracking-tight pb-1">
+                liked by {post.username} and {post.likes} others
               </label>
               <p className="text-xs text-slate-600">
                 <span className="font-bold text-xs tracking-tightd">

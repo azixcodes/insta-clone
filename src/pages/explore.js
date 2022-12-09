@@ -31,18 +31,18 @@ const Explore = () => {
     setPosts(posts);
   }, []);
   return (
-    <div className="w-full md:pr-2 max-w-7xl flex flex-row flex-wrap gap-3 justify-center md:justify-start mt-5 m-0 mx-0">
+    <div className="w-[1000px] md:pr-2 max-w-7xl flex flex-row flex-wrap gap-3 justify-center md:justify-start mt-5 m-0 mx-0 ">
       {online ? (
         <>
           {posts.map((post, index) => (
             <div
-              className="relative md:h-56 md:w-auto w-full h-auto  md:p-0
+              className="relative md:h-auto max-h-full md:w-auto w-full h-auto  md:p-0
            bg-white rounded-sm cursor-pointer group hover:opacity-90 "
               key={index}
             >
               <img
                 src={post.avatar}
-                className="w-[400px] max-w-[300px] min-w-[200px] h-[100px] min-h-[300px]  p-3"
+                className="w-auto max-w-[400px] min-w-[200px] h-auto min-h-[300px]  p-3"
                 alt="post"
               />
               <div className=" flex-row hidden group-hover:flex ">

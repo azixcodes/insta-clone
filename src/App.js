@@ -50,7 +50,7 @@ const App = () => {
         />
       )}
       {moreOptionsModal && (
-        <div className="absolute bottom-12 left-2 hidden md:block">
+        <div className="fixed bottom-12 left-2 hidden md:block">
           <MoreOptions />
         </div>
       )}
