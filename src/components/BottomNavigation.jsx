@@ -5,7 +5,7 @@ import {
   MagnifyingGlassIcon,
   PaperAirplaneIcon,
   HeartIcon,
-  BookmarkIcon,
+  UserCircleIcon,
 } from "@heroicons/react/24/outline";
 import { AiOutlineCompass } from "react-icons/ai";
 const BottomNavigation = () => {
@@ -17,7 +17,7 @@ const BottomNavigation = () => {
     },
     {
       label: "Search",
-      path: "/search",
+      path: "/explore",
       icon: <MagnifyingGlassIcon />,
     },
     {
@@ -25,19 +25,23 @@ const BottomNavigation = () => {
       path: "/messages",
       icon: <PaperAirplaneIcon style={{ transform: "rotate(-45deg)" }} />,
     },
-    {
-      label: "Explore",
-      path: "/explore",
-      icon: <AiOutlineCompass style={{ height: "34px", width: "34px" }} />,
-    },
+
     {
       label: "Notifications",
       path: "/notifications",
       icon: <HeartIcon />,
     },
+    {
+      label: "Profile",
+      path: "/profile",
+      icon: <UserCircleIcon />,
+    },
   ];
   return (
-    <div className="fixed -bottom-0 w-screen overflow-hidden pb-1 shadow-xl border h-12 bg-white text-black flex flex-row z-50">
+    <div
+      className="fixed -bottom-0 w-screen overflow-hidden pb-2 shadow-xl border h-12
+     bg-white text-black flex flex-row z-50 sm:hidden"
+    >
       {links.map((item, index) => (
         <NavLink
           to={`${item.path}`}

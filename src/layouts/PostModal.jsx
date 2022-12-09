@@ -31,15 +31,15 @@ const PostModal = ({ postModalOpen, setpostModalOpen, post }) => {
           setpostModalOpen(!postModalOpen);
         }}
       />
-      <div className="h-[32rem] w-[70%] bg-white flex flex-row">
-        <div className="post w-1/2 border bg-black flex flex-col items-center justify-center">
+      <div className="h-[32rem] w-screen md:w-[70%] bg-white flex flex-col md:flex-row">
+        <div className="post w-full md:w-1/2 border bg-black flex flex-col items-center justify-center">
           <img
             src={post.post}
             alt="post"
             className="h-auto max-h-full w-full max-w-3xl py-5"
           />
         </div>
-        <div className="w-1/2 flex flex-col ">
+        <div className="md:w-1/2 w-full flex flex-col ">
           <div className="flex flex-col w-full border px-2 p-2">
             <div className="user flex flex-row gap-2 items-center">
               <img
@@ -68,7 +68,7 @@ const PostModal = ({ postModalOpen, setpostModalOpen, post }) => {
                   <p className="text-xs text-slate-800 group cursor-pointer flex-1 whitespace-nowrap overflow-hidden text-ellipsis w-80">
                     {user.comment}
                   </p>
-                  <div className=" flex flex-row justify-between">
+                  <div className=" flex flex-row justify-start gap-10">
                     <span className="text-xs text-gray-500">
                       {user.timeStamp}
                     </span>
@@ -76,9 +76,9 @@ const PostModal = ({ postModalOpen, setpostModalOpen, post }) => {
                     <span className="text-xs text-gray-500 cursor-pointer">
                       reply
                     </span>
-                    <HeartIcon className="h-3 w-3 cursor-pointer" />
                   </div>
                 </div>
+                <HeartIcon className="h-3 w-3 cursor-pointer" />
               </div>
             ))}
           </div>

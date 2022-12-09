@@ -4,8 +4,8 @@ import Posts from "../components/Posts";
 import MiniProfile from "../components/MiniProfile";
 const Home = () => {
   return (
-    <main className="flex flex-row flex-auto gap-9">
-      <div>
+    <main className="flex flex-row  gap-9 w-full  justify-center md:justify-start">
+      <div className="flex flex-col gap-3">
         <Stories />
         <Posts />
       </div>

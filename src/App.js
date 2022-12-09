@@ -10,7 +10,7 @@ import {
   Search,
   Saved,
 } from "./pages/index";
-// import BottomNavigation from "./components/BottomNavigation";
+import BottomNavigation from "./components/BottomNavigation";
 // import MiniTopNavigation from "./components/MiniTopNavigation";
 import { useStateContext } from "./contexts/ContextApi";
 import MoreOptions from "./layouts/MoreOptions";
@@ -30,31 +30,34 @@ const App = () => {
   });
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 px-2 md:px-0">
-      <Sidebar />
-      <div className="routes relative md:left-24 lg:left-60 p-2 md:px-0">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/explore" element={<Explore />} />
-          <Route path="/notifications" element={<Notifications />} />
-          <Route path="/messages" element={<Messages />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/saved" element={<Saved />} />
-        </Routes>
-      </div>
-      {addPostModal && (
-        <UploadFile
-          handleClickOutSide={handleClickOutSide}
-          addPostModal={addPostModal}
-        />
-      )}
-      {moreOptionsModal && (
-        <div className="fixed bottom-12 left-2 hidden md:block">
-          <MoreOptions />
+    <>
+      <BottomNavigation />
+      <div className="grid grid-cols-1 md:grid-cols-2 px-2 md:px-0">
+        <Sidebar />
+        <div className="routes relative sm:left-24 lg:left-72 p-2 md:px-0 flex  w-screen lg:w-[900px]  flex-row justify-center items-center md:justify-start md:items-start mx-auto md:mx-2">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/explore" element={<Explore />} />
+            <Route path="/notifications" element={<Notifications />} />
+            <Route path="/messages" element={<Messages />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/saved" element={<Saved />} />
+          </Routes>
         </div>
-      )}
-    </div>
+        {addPostModal && (
+          <UploadFile
+            handleClickOutSide={handleClickOutSide}
+            addPostModal={addPostModal}
+          />
+        )}
+        {moreOptionsModal && (
+          <div className="fixed bottom-12 left-2 hidden md:block">
+            <MoreOptions />
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 

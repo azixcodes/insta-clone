@@ -31,7 +31,10 @@ const Explore = () => {
     setPosts(posts);
   }, []);
   return (
-    <div className="w-[1000px] md:pr-2 max-w-7xl flex flex-row flex-wrap gap-3 justify-center md:justify-start mt-5 m-0 mx-0 ">
+    <div
+      className="w-[100rem] md:pr-2 max-w-7xl flex flex-row flex-wrap gap-3 
+    justify-center md:justify-start mt-5 m-0 mx-0"
+    >
       {online ? (
         <>
           {posts.map((post, index) => (
