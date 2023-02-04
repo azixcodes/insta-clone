@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { faker } from "@faker-js/faker";
+
 import {
   HandThumbUpIcon,
   ChatBubbleOvalLeftIcon,
