@@ -41,18 +41,19 @@ const Explore = () => {
           {posts.map((post, index) => (
             <div
               className="relative md:h-auto max-h-full md:w-auto w-full h-auto  md:p-0
-           bg-white rounded-sm cursor-pointer group hover:opacity-90 "
+           bg-white rounded-sm cursor-pointer group  "
               key={index}
             >
               <img
                 src={post.avatar}
-                className="w-auto max-w-[400px] min-w-[200px] h-auto min-h-[300px]  p-3"
+                className="w-auto max-w-[400px] min-w-[200px] h-auto min-h-[300px] "
                 alt="post"
               />
               <div className=" flex-row hidden group-hover:flex ">
                 {post.interactions.map((interactions, i) => (
                   <div
-                    className="absolute top-4 left-4 flex gap-4 items-center justify-center flex-row w-full  h-full text-sm font-semibold z-50 text-white"
+                    className="absolute top-0 left-0 hidden w-full h-full justify-center items-center
+         bg-slate-500 opacity-0 group-hover:flex text-white flex-row gap-4 group-hover:opacity-50 duration-500 "
                     key={i}
                   >
                     <div className="flex flex-row ">

@@ -9,7 +9,6 @@ import {
   Profile,
   Search,
   Saved,
-  Explore,
 } from "./pages/index";
 
 import BottomNavigation from "./components/BottomNavigation";
