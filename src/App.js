@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Sidebar from "./components/Sidebar";
 import { Routes, Route } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
 import {
   Home,
   Messages,
@@ -16,8 +16,11 @@ import BottomNavigation from "./components/BottomNavigation";
 import { useStateContext } from "./contexts/ContextApi";
 import MoreOptions from "./layouts/MoreOptions";
 import UploadFile from "./components/UploadFile"; //Upload file component when create button is clicked
+
 const App = () => {
   const { addPostModal, setaddPostModal, moreOptionsModal } = useStateContext();
+
+  const MyComponent = React.lazy(() => import("./pages/explore"));
 
   const handleClickOutSide = () => {
     setaddPostModal(!addPostModal);
@@ -29,14 +32,13 @@ const App = () => {
       document.body.style.overflow = "unset";
     }
   });
-  const MyComponent = React.lazy(() => import("./pages/explore"));
   return (
     <>
       <BottomNavigation />
       <div className="grid grid-cols-1 md:grid-cols-2 px-2 md:px-0">
         <Sidebar />
         <div className="routes relative sm:left-24 lg:left-72 p-2 md:px-0 flex  w-screen lg:w-[900px]  flex-row justify-center items-center md:justify-start md:items-start mx-auto md:mx-2">
-          <Suspense fallback="Loading...">
+          <Suspense fallback="loading....">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/explore" element={<MyComponent />} />
