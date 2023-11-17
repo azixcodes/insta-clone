@@ -24,7 +24,11 @@ const MiniProfile = () => {
     <div className="flex flex-col max-w-xs w-96 z-0">
       <div className="flex flex-row justify-between mx-2 pb-4">
         <div className="flex flex-row gap-4 items-center">
-          <img src={User} className="w-14 h-14 rounded-full" alt="avatar" />
+          <img
+            src={User}
+            className="w-14 h-14 rounded-full object-fill border p-1"
+            alt="avatar"
+          />
           <div className="flex flex-col">
             <p className="text-xs font-bold">aziz-codes</p>
             <span className="text-xs text-gray-400">Aziz</span>

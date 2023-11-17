@@ -4,11 +4,12 @@ import PostSkeleton from "../layouts/PostSkeleton";
 import MiniProfile from "../components/MiniProfile";
 const Home = () => {
   const Posts = lazy(() => import("../components/Posts"));
+
   return (
     <main className="flex flex-row  gap-9 w-full  justify-center md:justify-start">
       <div className="flex flex-col gap-3">
-        <Stories />
         <Suspense fallback={<PostSkeleton />}>
+          <Stories />
           <Posts />
         </Suspense>
       </div>
